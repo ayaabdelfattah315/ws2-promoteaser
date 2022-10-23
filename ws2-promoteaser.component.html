@@ -1,0 +1,38 @@
+<div class="mod mod-mph-flex-anchor">
+  <div class="mod mph-flex-wrapper mod-eq-height" [ngClass]="(teaserObject.contentWidth) ? teaserObject.contentWidth: ''">
+    <div class="ws2-promoteaser" [ngClass]="[(teaserObject.contentTheme) ? teaserObject.contentTheme : 'cb-turquoise',
+    (teaserObject.contentPosition) ? teaserObject.contentPosition : 'cb-right ',
+    (teaserObject.contentAlign) ? teaserObject.contentAlign :'height300',
+    (teaserObject.wording.oneLinkClass) ? teaserObject.wording.oneLinkClass : ''
+      ]">
+      <div class="bg-img">
+        <picture class="lazyloaded">
+          <source srcset="{{teaserObject.wording.imageUrlSm}}" media="(max-width: 767px)" />
+          <img src="{{teaserObject.wording.imageUrlLg}}" alt="" />
+        </picture>
+      </div>
+      <div class="belt">
+        <div class="content-box">
+          <div class="ws2-text">
+
+            <div>
+              <!-- disply h2 h4 -->
+              <div class="headline-container">
+                <h3 class="headline" [innerHtml]="teaserObject.wording.title | translate"
+                  *ngIf="teaserObject?.wording.title"></h3>
+                <h5 class="subheadline" [innerHtml]="teaserObject.wording.subtitle | translate"
+                  *ngIf="teaserObject?.wording.subtitle"></h5>
+              </div>
+              <p [innerHtml]="teaserObject.wording.body | translate" *ngIf="teaserObject?.wording.body"></p>
+            </div>
+          </div>
+          <div class="ws2-button-container">
+            <a href="{{teaserObject.wording.submitButton.linkHref}}" class="{{teaserObject.wording.submitButton.stdClass}}"
+              data-jumpmark="no-data"
+              target="{{teaserObject.wording.submitButton.optTarget}}" rel="noopener noreferrer">{{teaserObject.wording.submitButton.title}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
